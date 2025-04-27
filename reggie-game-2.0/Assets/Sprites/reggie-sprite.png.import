@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm1shn0qw6hif"
-path="res://.godot/imported/IMG_3171-removebg-preview.png-7e92970989fbd5c4850e4c4d61a82356.ctex"
+uid="uid://cxyde4p6yt2df"
+path="res://.godot/imported/reggie-sprite.png-f40b838e73925a5b69e924c0c4db51c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/IMG_3171-removebg-preview.png"
-dest_files=["res://.godot/imported/IMG_3171-removebg-preview.png-7e92970989fbd5c4850e4c4d61a82356.ctex"]
+source_file="res://Assets/Sprites/reggie-sprite.png"
+dest_files=["res://.godot/imported/reggie-sprite.png-f40b838e73925a5b69e924c0c4db51c7.ctex"]
 
 [params]
 
