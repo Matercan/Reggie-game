@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs40o3ncqvqbx"]
+
+[ext_resource type="Script" uid="uid://cdvlli5q4otm" path="res://Scripts/reggie-movement.gd" id="1_0pfdb"]
+[ext_resource type="Texture2D" uid="uid://r7roldshxi21" path="res://Assets/Sprites/reggie base.png" id="1_juoul"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pfdb"]
+size = Vector2(4, 16)
+
+[node name="reggie" type="CharacterBody2D"]
+script = ExtResource("1_0pfdb")
+move_speed = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_juoul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0pfdb")
