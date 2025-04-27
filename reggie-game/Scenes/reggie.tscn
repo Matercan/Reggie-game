@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://bwm5efke0fggc"]
+[gd_scene load_steps=2 format=3 uid="uid://bwm5efke0fggc"]
 
-[node name="Reggie" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://cm1shn0qw6hif" path="res://Assets/Sprites/IMG_3171-removebg-preview.png" id="1_juoul"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_juoul")
