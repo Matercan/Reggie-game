@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwm5efke0fggc"]
 
-[ext_resource type="Script" uid="uid://vgrohoybufsk" path="res://Scripts/reggie-movement.gd" id="1_0pfdb"]
+[ext_resource type="Script" uid="uid://vgrohoybufsk" path="res://Scripts/reggie.gd" id="1_0pfdb"]
 [ext_resource type="Texture2D" uid="uid://cxyde4p6yt2df" path="res://Assets/Sprites/reggie-sprite.png" id="2_ltdkh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvbul"]

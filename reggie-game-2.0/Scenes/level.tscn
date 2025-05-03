@@ -11,9 +11,7 @@
 position = Vector2(51, 33)
 
 [node name="Followplayer" parent="." node_paths=PackedStringArray("reggie") instance=ExtResource("2_k5f4k")]
-position = Vector2(-69, 94)
 reggie = NodePath("../Reggie")
-max_velocity = 90.0
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -22,6 +20,7 @@ texture = SubResource("PlaceholderTexture2D_k5f4k")
 
 [node name="Node2D2" type="Node2D" parent="."]
 position = Vector2(42, 75)
+scale = Vector2(0.814705, 0.0852407)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D2"]
 texture = SubResource("PlaceholderTexture2D_k5f4k")
