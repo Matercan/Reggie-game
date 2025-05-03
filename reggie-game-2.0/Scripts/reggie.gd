@@ -3,8 +3,16 @@ extends CharacterBody2D
 @export var move_speed : float = 100
 @export var drag : float = 0.95
 @export var acceleration : float = 0.1
+@export var projectile: PackedScene
 
-func _physics_process(_delta):
+func _ready():
+	add_to_group("Player")
+	var gun: Node2D = $gun
+
+func _physics_process(_delta) -> void:
+	move()
+
+func move() -> void:
 	#get input direction
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
