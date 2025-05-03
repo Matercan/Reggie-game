@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://blwvtnmftajb7"]
+
+[ext_resource type="Script" uid="uid://dphp88myvgwef" path="res://Scripts/followplayer.gd" id="1_muxuv"]
+
+[node name="Followplayer" type="Node2D"]
+script = ExtResource("1_muxuv")
+
+[node name="Camera2D" type="Camera2D" parent="."]

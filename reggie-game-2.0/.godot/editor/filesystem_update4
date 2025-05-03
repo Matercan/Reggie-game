@@ -1,8 +1,5 @@
-res://Levels/topdown.tscn
-res://Levels/Reggie-char.tscn
-res://Levels/game_level.tscn
-res://Scripts/Movement.gd
-res://Scenes/reggie.tscn
 res://Scenes/level.tscn
-res://Scripts/reggie-movement.gd
-res://Scenes/reggie.gd
+res://Scenes/reggie.tscn
+res://Scripts/camera.gd
+res://Scripts/followplayer.gd
+res://Scenes/followplayer.tscn

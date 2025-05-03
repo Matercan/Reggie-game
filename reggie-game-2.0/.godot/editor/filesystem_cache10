@@ -1,13 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1745776927
+::res://::1746257266
 icon.svg::CompressedTexture2D/CompressedTexture2D::48428041303163447::1745744575::1745776113::1::::<><><>0<>0<>098733b1066c339a28e5ddf8f9338281<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+followplayer.gd::GDScript::8227516788945548261::1746257764::0::1::::<>Node2D<><>0<>0<><>::
 ::res://Assets/::1745776066
 ::res://Assets/Sounds/::1745776116
 reggie hype theme.wav::AudioStreamWAV/AudioStreamWAV::8584578049394784505::1745776066::1745776116::1::::<><><>0<>0<>3ddf25c47f1c536d4250bbc97b33cb78<>res://.godot/imported/reggie hype theme.wav-0cc5917b609ee8d76d24781222b5f878.sample::
 ::res://Assets/Sprites/::1745776927
-reggie-sprite.png::CompressedTexture2D::6436920679102869263::1745776253::1745776927::1::::<><><>0<>0<>07f4b2b83e92aed3f493e5e62d03197d<>res://.godot/imported/reggie-sprite.png-f40b838e73925a5b69e924c0c4db51c7.ctex::
-::res://Scenes/::1745776927
-level.tscn::PackedScene::7800627545516594258::1745776857::0::1::::<><><>0<>0<><>::uid://bwm5efke0fggc::::res://Scenes/reggie.tscn
-reggie.tscn::PackedScene::3957176708017292958::1745776927::0::1::::<><><>0<>0<><>::uid://vgrohoybufsk::::res://Scripts/reggie-movement.gd<>uid://cxyde4p6yt2df::::res://Assets/Sprites/reggie-sprite.png
-::res://Scripts/::1745776812
-reggie-movement.gd::GDScript::1487409563298028978::1745776812::0::1::::<>CharacterBody2D<><>0<>0<><>::
+reggie-sprite.png::CompressedTexture2D/CompressedTexture2D::6436920679102869263::1745776253::1745776927::1::::<><><>0<>0<>07f4b2b83e92aed3f493e5e62d03197d<>res://.godot/imported/reggie-sprite.png-f40b838e73925a5b69e924c0c4db51c7.ctex::
+::res://Scenes/::1746257545
+level.tscn::PackedScene::7800627545516594258::1746257545::0::1::::<><><>0<>0<><>::uid://bwm5efke0fggc::::res://Scenes/reggie.tscn<>uid://cdpdb30afq85s::::res://Scripts/camera.gd
+reggie.gd::GDScript/GDScript::850151389127270818::1745777006::0::1::::<>CharacterBody2D<><>0<>0<><>::
+reggie.tscn::PackedScene::3957176708017292958::1746257344::0::1::::<><><>0<>0<><>::uid://vgrohoybufsk::::res://Scripts/reggie-movement.gd<>uid://cxyde4p6yt2df::::res://Assets/Sprites/reggie-sprite.png
+::res://Scripts/::1746257545
+reggie-movement.gd::GDScript/GDScript::1487409563298028978::1745776971::0::1::::<>CharacterBody2D<><>0<>0<><>::
+camera.gd::GDScript::5014559010664664354::1746257545::0::1::::<>Camera2D<><>0<>0<><>::
