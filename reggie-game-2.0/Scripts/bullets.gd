@@ -6,7 +6,7 @@ class_name Projectile
 @onready var reggie = get_tree().get_nodes_in_group("player")[0]
 @export var length: float = 10
 @onready var time:float = 0
-@onready var direction: Vector2 = get_global_mouse_position() - find_gun_pos()
+@onready var direction: Vector2 = find_gun_pos().normalized()
 
 func _physics_process(delta: float) -> void:
 	move(delta)
@@ -14,14 +14,13 @@ func _physics_process(delta: float) -> void:
 	if (time >= length): free()
 	
 func find_gun_pos() -> Vector2:
-	var reggie_pos: Vector2 = reggie.global_position
-	var end_vector = get_global_mouse_position()
-	var direction = end_vector - reggie_pos
-	return reggie_pos + direction.normalized()
+	var gun = reggie.get_node("Reggie/gun")  # Capitalization matters!
+	var guntip = gun.get_node("Sprite2D")
+	return guntip.global_position - gun.global_position
 	
 func move(delta: float) -> void:
 	print("TIME: ", time)
-	direction = direction.normalized()
 	print("Gun Direction: ", find_gun_pos())
 	position += direction * speed * delta
+	
 	

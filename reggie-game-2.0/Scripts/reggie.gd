@@ -4,10 +4,11 @@ extends CharacterBody2D
 @export var drag : float = 0.95
 @export var acceleration : float = 0.1
 @export var projectile: PackedScene
+@export var gun: Node2D
 
 func _ready():
 	add_to_group("Player")
-	var gun: Node2D = $gun
+
 
 func _physics_process(_delta) -> void:
 	move()
