@@ -1,7 +1,7 @@
-res://Scenes/level.tscn
+res://Scenes/followplayer.tscn
 res://Scripts/reggie.gd
 res://Scripts/gun.gd
-res://Scripts/bullets.gd
+res://Scripts/followplayer.gd
+res://Scenes/level.tscn
 res://Scenes/reggie.tscn
-res://Scenes/followplayer.tscn
 res://Scenes/projectile.tscn
