@@ -1,7 +1,9 @@
 extends Node2D
 
 @export var guntip: Sprite2D
-@export var rotation_speed_deg: float = 180.0  # Degrees per second
+@export var rotation_speed_deg: float = 180.0 # Degrees per second
+@export var reloadtime: float = 1
+@onready var timesinceshot: float = reloadtime
 
 func _physics_process(delta: float) -> void:
 	var target_pos = get_global_mouse_position()
@@ -12,7 +14,11 @@ func _physics_process(delta: float) -> void:
 	var new_direction = rotate_toward_limited(current_facing, to_mouse, max_angle)
 	rotation = new_direction.angle()
 	
-	if Input.is_action_just_pressed("shoot"): shoot()
+	if Input.is_action_just_pressed("shoot") and timesinceshot >= reloadtime:
+		shoot()
+		timesinceshot = 0
+	timesinceshot += delta
+	print("Time since last gunshot: ", timesinceshot)
 	
 
 func rotate_toward_limited(from: Vector2, to: Vector2, max_angle: float) -> Vector2:

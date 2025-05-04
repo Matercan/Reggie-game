@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://djexgwte1f3cw"]
+[gd_scene load_steps=5 format=3 uid="uid://djexgwte1f3cw"]
 
 [ext_resource type="PackedScene" uid="uid://bwm5efke0fggc" path="res://Scenes/reggie.tscn" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://blwvtnmftajb7" path="res://Scenes/followplayer.tscn" id="2_k5f4k"]
+[ext_resource type="PackedScene" uid="uid://cn6j8iitap4fi" path="res://Scenes/LevelGUI.tscn" id="4_wqkje"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_k5f4k"]
 
-[node name="Level" type="Node2D" groups=["player"]]
+[node name="Level" type="Node2D"]
 
-[node name="Reggie" parent="." instance=ExtResource("1_tumq0")]
+[node name="Reggie" parent="." groups=["player"] instance=ExtResource("1_tumq0")]
 position = Vector2(51, 33)
 
 [node name="Followplayer" parent="." node_paths=PackedStringArray("reggie") instance=ExtResource("2_k5f4k")]
@@ -24,3 +25,5 @@ scale = Vector2(0.814705, 0.0852407)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D2"]
 texture = SubResource("PlaceholderTexture2D_k5f4k")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_wqkje")]

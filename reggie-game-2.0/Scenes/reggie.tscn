@@ -25,7 +25,7 @@ shape = SubResource("RectangleShape2D_vvbul")
 debug_color = Color(0.585556, 0.402011, 0.951701, 0.42)
 
 [node name="gun" type="Node2D" parent="." node_paths=PackedStringArray("guntip")]
-position = Vector2(0.065, -0.825)
+position = Vector2(0, -1)
 script = ExtResource("4_s4wch")
 guntip = NodePath("Sprite2D")
 rotation_speed_deg = 720.0

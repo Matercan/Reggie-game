@@ -7,6 +7,7 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gf172"]
 
 [node name="Projectile" type="Area2D"]
+collision_layer = 3
 script = ExtResource("1_f8cdk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 	if (time >= length): free()
 	
 func find_gun_pos() -> Vector2:
-	var gun = reggie.get_node("Reggie/gun")  # Capitalization matters!
+	var gun = reggie.get_node("gun")  # Capitalization matters!
 	var guntip = gun.get_node("Sprite2D")
 	return guntip.global_position - gun.global_position
 	

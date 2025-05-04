@@ -5,13 +5,19 @@ extends CharacterBody2D
 @export var acceleration : float = 0.1
 @export var projectile: PackedScene
 @export var gun: Node2D
+@export var Maxhealth: float = 100
+@export var Health: float = 100
 
 func _ready():
 	add_to_group("Player")
+	
+func has_variable(node: Object, var_name: String) -> bool:
+	return var_name in node.get_property_list().map(func(p): return p.name)
 
 
 func _physics_process(_delta) -> void:
 	move()
+
 
 func move() -> void:
 	#get input direction
