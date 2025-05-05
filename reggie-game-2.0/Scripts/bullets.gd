@@ -19,8 +19,6 @@ func find_gun_pos() -> Vector2:
 	return guntip.global_position - gun.global_position
 	
 func move(delta: float) -> void:
-	print("TIME: ", time)
-	print("Gun Direction: ", find_gun_pos())
 	position += direction * speed * delta
 	
 	
