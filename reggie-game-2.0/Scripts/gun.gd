@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 		shoot()
 		timesinceshot = 0
 	timesinceshot += delta
-	print("Time since last gunshot: ", timesinceshot)
+	# print("Time since last gunshot: ", timesinceshot)
 	
 
 func rotate_toward_limited(from: Vector2, to: Vector2, max_angle: float) -> Vector2:

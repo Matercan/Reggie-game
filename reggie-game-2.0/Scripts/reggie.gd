@@ -32,19 +32,10 @@ func move() -> void:
 		input_direction *= 1 / sqrt(2)
 	
 	#calculate velocity
-	velocity += input_direction * move_speed * acceleration
+	if !velocity.length() > move_speed: 
+		velocity += input_direction * move_speed * acceleration
 	velocity *= drag
 	
-	if input_direction.x != 0 and input_direction.y != 0:
-		if abs(velocity.x) > move_speed / sqrt(2):
-			velocity.x = move_speed * sign(velocity.x)
-		if abs(velocity.y) > move_speed / sqrt(2):
-			velocity.y = move_speed * sign(velocity.y)
-	else: 
-		if (abs(velocity.x) > move_speed):
-			velocity.x = move_speed * sign(velocity.x)
-		if (abs(velocity.y) > move_speed):
-			velocity.y = move_speed * sign(velocity.y)
 	
 	#Move reggie on screen
 	move_and_slide()
