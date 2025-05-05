@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cs8sq7vxhtb41"
+path="res://.godot/imported/reggie hype theme.wav-268f9a7b072b54aad33a0349de0b008b.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/reggie hype theme.wav"
+dest_files=["res://.godot/imported/reggie hype theme.wav-268f9a7b072b54aad33a0349de0b008b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

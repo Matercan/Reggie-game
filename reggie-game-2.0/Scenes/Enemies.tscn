@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqaykqbwnyj7o"]
+
+[ext_resource type="PackedScene" uid="uid://b7keq5y4f5rh6" path="res://Scenes/Enemies/placeholder.tscn" id="1_77025"]
+
+[node name="Hivemind" type="Node2D"]
+
+[node name="Placeholder" parent="." instance=ExtResource("1_77025")]

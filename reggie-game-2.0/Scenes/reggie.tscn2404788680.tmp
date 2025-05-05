@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwm5efke0fggc"]
+
+[ext_resource type="Script" uid="uid://vgrohoybufsk" path="res://Scripts/reggie.gd" id="1_0pfdb"]
+[ext_resource type="Texture2D" uid="uid://cxyde4p6yt2df" path="res://Assets/Sprites/reggie-sprite.png" id="2_ltdkh"]
+[ext_resource type="PackedScene" uid="uid://lga4sf7ajmnp" path="res://Scenes/projectile.tscn" id="2_s4wch"]
+[ext_resource type="Script" uid="uid://coniby1ichw5g" path="res://Scripts/gun.gd" id="4_s4wch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvbul"]
+size = Vector2(4, 16)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s4wch"]
+
+[node name="Reggie" type="CharacterBody2D"]
+script = ExtResource("1_0pfdb")
+projectile = ExtResource("2_s4wch")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ltdkh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_vvbul")
+debug_color = Color(0.585556, 0.402011, 0.951701, 0.42)
+
+[node name="gun" type="Node2D" parent="."]
+position = Vector2(0.065, -0.825)
+script = ExtResource("4_s4wch")
+
+[node name="Sprite2D" type="Sprite2D" parent="gun"]
+modulate = Color(0.540347, 0.410247, 0.0186013, 1)
+position = Vector2(4.935, -0.175)
+scale = Vector2(11.5, 1)
+texture = SubResource("PlaceholderTexture2D_s4wch")
