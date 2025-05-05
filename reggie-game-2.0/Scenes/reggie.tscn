@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vgrohoybufsk" path="res://Scripts/reggie.gd" id="1_0pfdb"]
 [ext_resource type="PackedScene" uid="uid://lga4sf7ajmnp" path="res://Scenes/projectile.tscn" id="2_s4wch"]
-[ext_resource type="Texture2D" uid="uid://c6065sltryxe1" path="res://Assets/Sprites/reggie-sprite.png" id="3_pwnlj"]
+[ext_resource type="Texture2D" uid="uid://c6065sltryxe1" path="res://Assets/Sprites/Reggie-Sprite.png" id="3_pwnlj"]
 [ext_resource type="Script" uid="uid://coniby1ichw5g" path="res://Scripts/gun.gd" id="4_s4wch"]
 [ext_resource type="AudioStream" uid="uid://gvow5rmbv2cx" path="res://Assets/Sounds/Impact Gunshot.wav" id="5_pwnlj"]
 

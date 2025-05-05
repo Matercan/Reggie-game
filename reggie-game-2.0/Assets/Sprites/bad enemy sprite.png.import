@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6065sltryxe1"
-path="res://.godot/imported/Reggie-Sprite.png-284cb5995eafb8958b6fd31398378cbb.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://d3ib2y68ixdgj"
+valid=false
 
 [deps]
 
-source_file="res://Assets/Sprites/Reggie-Sprite.png"
-dest_files=["res://.godot/imported/Reggie-Sprite.png-284cb5995eafb8958b6fd31398378cbb.ctex"]
+source_file="res://Assets/Sprites/bad enemy sprite.png"
 
 [params]
 
