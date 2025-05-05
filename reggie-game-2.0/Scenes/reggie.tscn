@@ -29,6 +29,7 @@ position = Vector2(0, -1)
 script = ExtResource("4_s4wch")
 guntip = NodePath("Sprite2D")
 rotation_speed_deg = 720.0
+reloadtime = null
 
 [node name="Sprite2D" type="Sprite2D" parent="gun"]
 modulate = Color(0.540347, 0.410247, 0.0186013, 1)
