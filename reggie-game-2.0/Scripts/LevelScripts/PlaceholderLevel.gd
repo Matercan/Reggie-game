@@ -19,7 +19,7 @@ func _ready() -> void:
 	set_process(true)
 
 func _process(delta: float) -> void:
-	print("Enemy spawn timer: ", timer)
+	#print("Enemy spawn timer: ", timer)
 	if is_wating:
 		timer += delta
 		if timer >= 3:
