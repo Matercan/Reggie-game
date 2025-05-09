@@ -8,6 +8,9 @@ class_name Projectile
 @onready var time:float = 0
 @onready var direction: Vector2 = find_gun_pos().normalized()
 
+func _ready():
+	connect("body_entered", Callable(self, "_on_body_entered"))
+
 func _physics_process(delta: float) -> void:
 	move(delta)
 	time += delta
@@ -20,5 +23,9 @@ func find_gun_pos() -> Vector2:
 	
 func move(delta: float) -> void:
 	position += direction * speed * delta
-	
+
+func _on_body_entered(body):
+	if body != reggie:
+		body.Health -= 50
+		queue_free()
 	

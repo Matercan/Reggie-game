@@ -22,10 +22,13 @@ func takedamage(amount: float, incomingdir: Vector2, attack_knockback: float) ->
 	
 func movetotarget(speed: float, from: Vector2, to: Vector2, delta: float) -> Vector2:
 	var dir: Vector2 = (to - from).normalized()
-	print("Enemy Direction: ", dir)
+	#print("Enemy Direction: ", dir)
 	return dir * delta * speed
 	
 func dealdamage(method: int, to: Node):
+	print(damage[method])
+	print(knockback[method])
+	
 	print("Target: ", to)
 	if !has_variable(to, "Health") or !has_variable(to, "velocity"):
 		print("Target not Damage Takable")
@@ -33,9 +36,7 @@ func dealdamage(method: int, to: Node):
 	
 	to.Health -= damage[method]
 	
+	
 	var dir = (to.global_position - position).normalized()
 	to.velocity += dir * knockback[method]
 	
-func _process(delta: float) -> void:
-	
-	timer += delta
