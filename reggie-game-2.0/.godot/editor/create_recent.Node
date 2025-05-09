@@ -1,3 +1,5 @@
+AnimationPlayer
+AudioStreamPlayer2D
 Area2D
 StaticBody2D
 Sprite2D
@@ -11,4 +13,3 @@ HBoxContainer
 CanvasLayer
 ColorRect
 Button
-Container

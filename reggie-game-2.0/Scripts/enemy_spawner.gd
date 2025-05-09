@@ -22,6 +22,7 @@ func calculateposition(midpoint: Vector2, spawnradius: float, mindistance: float
 	
 func SpawnEnemies(Type: String, Position: Vector2):
 	var enemy = load_scene(Type)
+	enemy.get_node("Sprite2D").material = enemy.get_node("Sprite2D").material.duplicate()
 	print("Enemy!: ", enemy)
 	add_child(enemy)
 	enemy.transform = transform

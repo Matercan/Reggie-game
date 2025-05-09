@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://lga4sf7ajmnp"]
+[gd_scene load_steps=5 format=3 uid="uid://lga4sf7ajmnp"]
 
 [ext_resource type="Script" uid="uid://cbxandooqff7h" path="res://Scripts/bullets.gd" id="1_f8cdk"]
+[ext_resource type="AudioStream" uid="uid://22h8m77ek704" path="res://Assets/Sounds/Bullet Hit.mp3" id="2_yr2qt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nsakb"]
 
@@ -17,3 +18,7 @@ shape = SubResource("CircleShape2D_nsakb")
 modulate = Color(0, 0, 0, 1)
 scale = Vector2(8.5, 10.5)
 texture = SubResource("PlaceholderTexture2D_gf172")
+
+[node name="Impact" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_yr2qt")
+volume_db = 4.952
