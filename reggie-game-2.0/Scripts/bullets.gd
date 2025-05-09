@@ -11,6 +11,7 @@ class_name Projectile
 
 func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
+	add_to_group("projectile")
 
 func _physics_process(delta: float) -> void:
 	move(delta)
@@ -25,27 +26,10 @@ func find_gun_pos() -> Vector2:
 func move(delta: float) -> void:
 	position += direction * speed * delta
 
-func _on_body_entered(body):
-	if body != reggie:
-		body.Health -= 27
-		body.Velocity += (body.global_position - reggie.global_position).normalized() * knockback
-		$Sprite2D.visible = false
-		
-		body.get_node("Sprite2D/AnimationPlayer").play("flash")
-		print("Animation player", body.get_node("Sprite2D/AnimationPlayer"))
-		
-		var impact = $Impact
-		if impact.stream:
-			impact.stream_paused = false
-			impact.play()
-			impact.connect("finished", Callable(self, "_on_impact_finished"))
-			print("Impact sound playing? ", impact.playing)
-		else:
-			print("No stream assigned to Impact!")
-		
-		print("hit")
-
+	
 func _on_impact_finished():
 	queue_free()
+
+
 
 	

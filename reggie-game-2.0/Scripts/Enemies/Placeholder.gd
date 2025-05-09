@@ -3,7 +3,7 @@ extends StaticBody2D
 var base = Base_Enemy.new()
 
 @onready var reggie: CharacterBody2D = get_tree().get_nodes_in_group("player")[0]
-@onready var area = get_node("Area2D")
+@onready var area = get_node("Hurtbox")
 var Health: float
 var Velocity: Vector2
 
@@ -40,4 +40,27 @@ func _on_body_entered(body):
 	base.dealdamage(0, body)
 	base.timer = 0
 	#print("Target compromised")
+	
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	print("Hit")
+	if area.is_in_group("projectile"):
+		var impact = area.get_node("Impact")
+		if impact.stream:
+			impact.stream_paused = false
+			impact.play()
+			impact.connect("finished", Callable(area, "_on_impact_finished"))
+			print("Impact sound playing? ", impact.playing)
+		else:
+			print("No stream assigned to Impact!")
+			
+		Health -= 25
+		get_node("Sprite2D/AnimationPlayer").play("flash")
+		Velocity += (global_position - reggie.global_position).normalized() * area.knockback
+		area.get_node("Sprite2D").visible = false
 	
