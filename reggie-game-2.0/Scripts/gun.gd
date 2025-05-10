@@ -30,7 +30,8 @@ func rotate_toward_limited(from: Vector2, to: Vector2, max_angle: float) -> Vect
 
 func shoot() -> void:
 	var gunshot: AudioStreamPlayer2D = $Gunshot
-	gunshot.playing = true
+	gunshot.pitch_scale = randf_range(0.9, 1.1)
+	gunshot.play()
 	var inst: Projectile = get_parent().projectile.instantiate()
 	owner.owner.add_child(inst)
 	inst.transform = guntip.transform

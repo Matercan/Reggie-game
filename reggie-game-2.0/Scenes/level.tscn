@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://djexgwte1f3cw"]
+[gd_scene load_steps=8 format=3 uid="uid://djexgwte1f3cw"]
 
 [ext_resource type="Script" uid="uid://by71ck3dkdnhx" path="res://Scripts/LevelScripts/PlaceholderLevel.gd" id="1_wqkje"]
 [ext_resource type="PackedScene" uid="uid://bwm5efke0fggc" path="res://Scenes/reggie.tscn" id="2_81xng"]
 [ext_resource type="PackedScene" uid="uid://blwvtnmftajb7" path="res://Scenes/followplayer.tscn" id="2_k5f4k"]
+[ext_resource type="PackedScene" uid="uid://8ktt58lgpah" path="res://Scenes/DeathMenuGUI.tscn" id="4_8c0lf"]
 [ext_resource type="PackedScene" uid="uid://cn6j8iitap4fi" path="res://Scenes/LevelGUI.tscn" id="4_wqkje"]
 [ext_resource type="PackedScene" uid="uid://bxrssew438dtk" path="res://Scenes/pause_menu.tscn" id="6_0f350"]
 [ext_resource type="PackedScene" uid="uid://b7keq5y4f5rh6" path="res://Scenes/Enemies/placeholder.tscn" id="6_8c0lf"]
@@ -12,19 +13,20 @@ script = ExtResource("1_wqkje")
 
 [node name="GUI" parent="." instance=ExtResource("4_wqkje")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("6_0f350")]
-offset_left = -3.0
-offset_top = 2.0
-offset_right = -3.0
-offset_bottom = 2.0
-
 [node name="Followplayer" parent="." node_paths=PackedStringArray("reggie") instance=ExtResource("2_k5f4k")]
 reggie = NodePath("../Reggie")
 
-[node name="Reggie" parent="." groups=["player"] instance=ExtResource("2_81xng")]
+[node name="Reggie" parent="." node_paths=PackedStringArray("DeathMenu") groups=["player"] instance=ExtResource("2_81xng")]
 position = Vector2(19, 31)
+DeathMenu = NodePath("../CanvasLayer/death_menu")
 
-[node name="Placeholder" parent="." instance=ExtResource("6_8c0lf")]
+[node name="Placeholder" parent="." groups=["Placeholder"] instance=ExtResource("6_8c0lf")]
 position = Vector2(83, 70)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("6_0f350")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="death_menu" parent="CanvasLayer" instance=ExtResource("4_8c0lf")]

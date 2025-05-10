@@ -2,17 +2,20 @@ extends Control
 
 func _ready() -> void:
 	$AnimationPlayer.play("RESET")
+	$VBoxContainer.visible = false
 
 
 func resume():
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
+	$VBoxContainer.visible = false
 	print("Resume")
 	
 	
 func pause():
 	get_tree().paused = true
 	$AnimationPlayer.play("blur")
+	$VBoxContainer.visible = true	
 	print("Pause")
 	
 func testEsc():

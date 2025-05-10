@@ -20,6 +20,10 @@ func has_variable(node: Object, var_name: String) -> bool:
 	return var_name in node.get_property_list().map(func(p): return p.name)
 
 
+	
+func wait(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
+
 func _physics_process(_delta) -> void:
 	move()
 	if Health <= 0: die()
@@ -57,13 +61,14 @@ func _on_hitbox_area_entered(area: Area2D) -> void: # checks if something intera
 		
 	if enemy.is_in_group("Enemytypes"):
 		print("It's an enemy")
-		if enemy.name == "Placeholder":
+		if enemy.is_in_group("Placeholder"):
 			print("Enemy detected: Placholder")
 			if enemy.base.timer > enemy.base.attackcooldown: # If ccooldown has passed
 				enemy.base.dealdamage(0, self) #deals damage type 0 to yourself 
-				var dir = (enemy.global_position - global_position).normalized()
-				velocity += dir * enemy.base.knockback[0] # knockback's reggie
 				enemy.base.timer = 0
+				get_tree().paused = true
+				await get_tree().create_timer(enemy.base.pause[0]).timeout
+				get_tree().paused = false
 	else: # projectile scripts in future
 		pass
 		

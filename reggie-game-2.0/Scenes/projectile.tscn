@@ -22,3 +22,10 @@ texture = SubResource("PlaceholderTexture2D_gf172")
 [node name="Impact" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_yr2qt")
 volume_db = 4.952
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 0, 0, 1)
+offset_right = 91.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 49
+text = "250"

@@ -61,6 +61,8 @@ size = Vector2(4, 15)
 script = ExtResource("1_0pfdb")
 projectile = ExtResource("2_s4wch")
 gun = NodePath("gun")
+Maxhealth = 20.0
+Health = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

@@ -10,6 +10,7 @@ func _ready() -> void:
 	base.velocity = 50
 	base.damage = [15.0, 0.0, 0.0]
 	base.knockback = [200]
+	base.pause = [0.2]
 	base.attackcooldown = 1
 	base.timer = 10
 	base.Maxhealth = 100
@@ -21,6 +22,8 @@ func _ready() -> void:
 	get_node("Hurtbox").add_to_group("Hurtbox")
 	$Sprite2D/AnimationPlayer.play("RESET")
 	add_to_group("Enemytypes")
+	add_to_group("Placeholder")
+
 
 func _physics_process(delta: float) -> void: # sets constants
 	print("Health: ", Health)
@@ -32,7 +35,6 @@ func _physics_process(delta: float) -> void: # sets constants
 	if Health <= 0:
 		print("Dead")
 		free()
-	
 	
 
 
@@ -47,12 +49,15 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		
 		if impact.stream: # plays the sound
 			impact.stream_paused = false
+			impact.pitch_scale = randf_range(0.85, 1.15)
 			impact.play()
 			impact.connect("finished", Callable(area, "_on_impact_finished"))
 			print("Impact sound playing? ", impact.playing)
 		else:
 			print("No stream assigned to Impact!")
 			
+		area.points += 25
+		area.label.visible = true
 		Health -= 25 # takes away health
 		get_node("Sprite2D/AnimationPlayer").play("flash") # plays the animation
 		Velocity += (global_position - reggie.global_position).normalized() * area.knockback #knockback
