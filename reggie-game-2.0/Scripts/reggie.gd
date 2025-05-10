@@ -28,14 +28,34 @@ func move() -> void:
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
 
-	if input_direction.x != 0 and input_direction.y != 0:
-		input_direction *= 1 / sqrt(2)
+	input_direction = input_direction.normalized() # makes it so diagonal dirs aren't faster
 	
 	#calculate velocity
-	if !velocity.length() > move_speed: 
+	if !velocity.length() > move_speed: # speed cap
 		velocity += input_direction * move_speed * acceleration
+		
 	velocity *= drag
 	
 	
 	#Move reggie on screen
 	move_and_slide()
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void: # checks if something interacts with hitbox
+	if !area.is_in_group("Hurtbox"): return
+	var Animp = $Sprite2D/AnimationPlayer
+	Animp.play("flash")
+	var enemy = area.owner
+		
+	if enemy.is_in_group("Enemytypes"):
+		if enemy.name == "Placeholder":
+			if enemy.base.timer > enemy.base.attackcooldown: # If ccooldown has passed
+				enemy.base.dealdamage(0, self) #deals damage type 0 to yourself 
+				var dir = (enemy.global_position - global_position).normalized()
+				velocity += dir * enemy.base.knockback[0] # knockback's reggie
+				enemy.base.timer = 0
+	else: # projectile scripts in future
+		pass
+		
+		
+		

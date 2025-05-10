@@ -53,4 +53,5 @@ func dealdamage(method: int, to: Node):
 	
 	var dir = (to.global_position - position).normalized()
 	to.velocity += dir * knockback[method]
+	print("Knockback Vector:", dir * knockback[method])
 	

@@ -18,6 +18,8 @@ func _ready() -> void:
 	Health = base.Health
 	base.sprite = $Sprite2D
 	area.connect("body_entered", Callable(self, "_on_body_entered"))
+	get_node("Hitbox").add_to_group("Hitbox")
+	get_node("Hurtbox").add_to_group("Hurtbox")
 
 func _physics_process(delta: float) -> void:
 	print("Health: ", Health)
