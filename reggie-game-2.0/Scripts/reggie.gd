@@ -9,9 +9,12 @@ class_name Player
 @export var gun: Node2D
 @export var Maxhealth: float = 100
 @export var Health: float = 100
+@export var DeathMenu: Node
 
 func _ready():
 	add_to_group("Player")
+	$Sprite2D/AnimationPlayer.play("RESET")
+	Health = 100
 	
 func has_variable(node: Object, var_name: String) -> bool:
 	return var_name in node.get_property_list().map(func(p): return p.name)
@@ -19,7 +22,10 @@ func has_variable(node: Object, var_name: String) -> bool:
 
 func _physics_process(_delta) -> void:
 	move()
-
+	if Health <= 0: die()
+	
+func  die() -> void:
+	DeathMenu.pause()
 
 func move() -> void:
 	#get input direction
@@ -46,9 +52,13 @@ func _on_hitbox_area_entered(area: Area2D) -> void: # checks if something intera
 	var Animp = $Sprite2D/AnimationPlayer
 	Animp.play("flash")
 	var enemy = area.owner
+	print("Area entered: ", area.name)
+	print("Enemy candidate:", enemy.name)
 		
 	if enemy.is_in_group("Enemytypes"):
+		print("It's an enemy")
 		if enemy.name == "Placeholder":
+			print("Enemy detected: Placholder")
 			if enemy.base.timer > enemy.base.attackcooldown: # If ccooldown has passed
 				enemy.base.dealdamage(0, self) #deals damage type 0 to yourself 
 				var dir = (enemy.global_position - global_position).normalized()

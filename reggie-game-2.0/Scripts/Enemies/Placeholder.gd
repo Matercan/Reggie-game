@@ -3,7 +3,6 @@ extends StaticBody2D
 var base = Base_Enemy.new()
 
 @onready var reggie: CharacterBody2D = get_tree().get_nodes_in_group("player")[0]
-@onready var area = get_node("Hurtbox")
 var Health: float
 var Velocity: Vector2
 
@@ -17,11 +16,13 @@ func _ready() -> void:
 	base.Health = base.Maxhealth
 	Health = base.Health
 	base.sprite = $Sprite2D
-	area.connect("body_entered", Callable(self, "_on_body_entered"))
+	base.AudioPlayer = $AudioStreamPlayer2D
 	get_node("Hitbox").add_to_group("Hitbox")
 	get_node("Hurtbox").add_to_group("Hurtbox")
+	$Sprite2D/AnimationPlayer.play("RESET")
+	add_to_group("Enemytypes")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void: # sets constants
 	print("Health: ", Health)
 	Velocity = base.movetotarget(Velocity, base.velocity, 15,
 	 global_position, reggie.global_position, delta)
@@ -33,16 +34,6 @@ func _physics_process(delta: float) -> void:
 		free()
 	
 	
-func _on_body_entered(body):
-	#print("Target? Yes sir")
-	if base.timer < base.attackcooldown:
-		#print("Time until I can attack target again: ", base.timer)
-		#print("Attack on target cooldown not passed")
-		return
-	base.dealdamage(0, body)
-	base.timer = 0
-	#print("Target compromised")
-	
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
@@ -50,10 +41,11 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	print("Hit")
+	print("Hit") # if it's hit by a projectile, do the things
 	if area.is_in_group("projectile"):
 		var impact = area.get_node("Impact")
-		if impact.stream:
+		
+		if impact.stream: # plays the sound
 			impact.stream_paused = false
 			impact.play()
 			impact.connect("finished", Callable(area, "_on_impact_finished"))
@@ -61,8 +53,8 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		else:
 			print("No stream assigned to Impact!")
 			
-		Health -= 25
-		get_node("Sprite2D/AnimationPlayer").play("flash")
-		Velocity += (global_position - reggie.global_position).normalized() * area.knockback
-		area.get_node("Sprite2D").visible = false
+		Health -= 25 # takes away health
+		get_node("Sprite2D/AnimationPlayer").play("flash") # plays the animation
+		Velocity += (global_position - reggie.global_position).normalized() * area.knockback #knockback
+		area.get_node("Sprite2D").visible = false #
 	

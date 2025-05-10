@@ -11,6 +11,7 @@ class_name Base_Enemy
 @export var knockback = Array([], TYPE_FLOAT, "", null)
 @export var damage = Array([], TYPE_FLOAT, "", null)
 @export var damagetype = Array([], TYPE_STRING, "", null)
+@export var AudioPlayer: AudioStreamPlayer2D
 
 @onready var sprite
 
@@ -49,8 +50,7 @@ func dealdamage(method: int, to: Node):
 		return
 	
 	to.Health -= damage[method]
-	
-	
+	AudioPlayer.play()
 	var dir = (to.global_position - position).normalized()
 	to.velocity += dir * knockback[method]
 	print("Knockback Vector:", dir * knockback[method])
