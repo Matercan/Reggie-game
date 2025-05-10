@@ -12,8 +12,8 @@ func wait(seconds: float) -> void:
 func _ready() -> void:
 	print("Hello world")
 	add_child(enemyspawner)
-	enemyspawner.SpawnEnemies("placeholder",
-	 enemyspawner.calculateposition(reggie.global_position, 100, 10))
+	#enemyspawner.SpawnEnemies("placeholder",
+	# enemyspawner.calculateposition(reggie.global_position, 100, 10))
 	print("Enemy spawner has spawned some shit")
 	wait(3)
 	set_process(true)
@@ -27,8 +27,12 @@ func _process(delta: float) -> void:
 			print("Waited")
 			timer = 0
 	else:
-		enemyspawner.SpawnEnemies("placeholder",
-		enemyspawner.calculateposition(reggie.global_position, 100, 10))
+		if randi_range(1, 4) > 1:
+			enemyspawner.SpawnEnemies("placeholder",
+			enemyspawner.calculateposition(reggie.global_position, 100, 20))
+		else:
+			enemyspawner.SpawnEnemies("wizard",
+			enemyspawner.calculateposition(reggie.global_position, 100, 20))
 		print("Enemy spawner has spawned some shit")
 		is_wating = true
 	

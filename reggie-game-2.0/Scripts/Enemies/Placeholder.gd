@@ -51,7 +51,6 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 			impact.stream_paused = false
 			impact.pitch_scale = randf_range(0.85, 1.15)
 			impact.play()
-			impact.connect("finished", Callable(area, "_on_impact_finished"))
 			print("Impact sound playing? ", impact.playing)
 		else:
 			print("No stream assigned to Impact!")

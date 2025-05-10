@@ -29,7 +29,8 @@ func _physics_process(_delta) -> void:
 	if Health <= 0: die()
 	
 func  die() -> void:
-	DeathMenu.pause()
+	if $Sprite2D/AnimationPlayer.is_playing() == false:
+		DeathMenu.pause()
 
 func move() -> void:
 	#get input direction
@@ -46,7 +47,6 @@ func move() -> void:
 		
 	velocity *= drag
 	
-	
 	#Move reggie on screen
 	move_and_slide()
 
@@ -57,20 +57,22 @@ func _on_hitbox_area_entered(area: Area2D) -> void: # checks if something intera
 	Animp.play("flash")
 	var enemy = area.owner
 	print("Area entered: ", area.name)
-	print("Enemy candidate:", enemy.name)
-		
-	if enemy.is_in_group("Enemytypes"):
-		print("It's an enemy")
-		if enemy.is_in_group("Placeholder"):
-			print("Enemy detected: Placholder")
-			if enemy.base.timer > enemy.base.attackcooldown: # If ccooldown has passed
-				enemy.base.dealdamage(0, self) #deals damage type 0 to yourself 
-				enemy.base.timer = 0
-				get_tree().paused = true
-				await get_tree().create_timer(enemy.base.pause[0]).timeout
-				get_tree().paused = false
+	
+	if enemy != null:
+		if enemy.is_in_group("Enemytypes"):
+			print("It's an enemy")
+			if enemy.is_in_group("Placeholder"):
+				print("Enemy detected: Placholder")
+				if enemy.base.timer > enemy.base.attackcooldown: # If ccooldown has passed
+					enemy.base.dealdamage(0, self) #deals damage type 0 to yourself 
+					enemy.base.timer = 0
 	else: # projectile scripts in future
-		pass
-		
+		print("It's a projectile")
+		enemy = area.spawner
+		print("Sender: ", enemy)
+		if enemy.is_in_group("Wizard"):
+			print("Enemy detected: Wizard")
+			enemy.base.dealdamage(0, self)
+			area.queue_free()
 		
 		

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://do214gi5xd7mo"
+path="res://.godot/imported/reggie lofi.wav-68893ed194e101ed9fd4e56bf01cd410.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/reggie lofi.wav"
+dest_files=["res://.godot/imported/reggie lofi.wav-68893ed194e101ed9fd4e56bf01cd410.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

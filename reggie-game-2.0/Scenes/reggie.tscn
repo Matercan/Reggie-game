@@ -58,11 +58,10 @@ _data = {
 size = Vector2(4, 15)
 
 [node name="Reggie" type="CharacterBody2D" node_paths=PackedStringArray("gun")]
+scale = Vector2(1, 0.958218)
 script = ExtResource("1_0pfdb")
 projectile = ExtResource("2_s4wch")
 gun = NodePath("gun")
-Maxhealth = 20.0
-Health = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

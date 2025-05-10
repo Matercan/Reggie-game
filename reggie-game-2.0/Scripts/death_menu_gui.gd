@@ -17,7 +17,7 @@ func pause():
 	get_tree().paused = true
 	$AnimationPlayer.play("blur")
 	$AudioStreamPlayer.play()
-	print("Pause")
+	print("Dead + Pause")
 
 func _on_restart_pressed() -> void:
 	if reggie.Health >= 0: return
