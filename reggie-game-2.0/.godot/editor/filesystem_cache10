@@ -1,35 +1,53 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1746458650
-icon.svg::CompressedTexture2D::48428041303163447::1746458650::1746458672::1::::<><><>0<>0<>098733b1066c339a28e5ddf8f9338281<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://::1746903835
+export_presets.cfg::TextFile/TextFile::-1::1746817761::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D/CompressedTexture2D::48428041303163447::1746458650::1746458672::1::::<><><>0<>0<>098733b1066c339a28e5ddf8f9338281<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://Assets/::1746437747
-::res://Assets/Sounds/::1746437747
-Impact Gunshot.wav::AudioStreamWAV/AudioStreamWAV::465375922537685311::1746437747::1746437747::1::::<><><>0<>0<>f779cd9b561178c59f57e9dcc9c81894<>res://.godot/imported/Impact Gunshot.wav-277ca75b1407f87f3fd5570ec0bb01d8.sample::
+::res://Assets/Sounds/::1746891893
+Bullet Hit.mp3::AudioStreamMP3/AudioStreamMP3::1951321608908367999::1746819334::1746826315::1::::<><><>0<>0<>5665e119f0abc0cd9e60e51c14ad8e6e<>res://.godot/imported/Bullet Hit.mp3-e290d4dba4084af5ef05df621bde2b75.mp3str::
+decentlylongshot.MP3::AudioStreamMP3/AudioStreamMP3::7237402422963350664::1746860514::1746860514::1::::<><><>0<>0<>0850579a8dac91b023c1cfb8b6861044<>res://.godot/imported/decentlylongshot.MP3-e352d8014be6d4a20b9ac0a8ae640e06.mp3str::
+fireball-whoosh-1-179125.mp3::AudioStreamMP3/AudioStreamMP3::2956814964185397991::1746891892::1746891893::1::::<><><>0<>0<>4f35c2af9a5b4ad0c4afd24f16002c86<>res://.godot/imported/fireball-whoosh-1-179125.mp3-32ec6cc0bff20cbfb426be3523f71fb3.mp3str::
 reggie hype theme.wav::AudioStreamWAV/AudioStreamWAV::8584578049394784505::1746437748::1746437747::1::::<><><>0<>0<>3ddf25c47f1c536d4250bbc97b33cb78<>res://.godot/imported/reggie hype theme.wav-0cc5917b609ee8d76d24781222b5f878.sample::
-::res://Assets/Sprites/::1746458454
-bad enemy sprite.png::CompressedTexture2D::9141174938365194489::1746454848::1746458454::0::::<><><>0<>0<>133ff057af9a7d7225d204475343e834<>::
-PlaceholderEnemy.png::CompressedTexture2D::6165096580202956484::1746458433::1746458430::1::::<><><>0<>0<>8b91c35414e55211636fc5b796b6518c<>res://.godot/imported/PlaceholderEnemy.png-0e2338e0d1d117df6c54732407bfc514.ctex::
-Reggie-Sprite.png::CompressedTexture2D::7002241727909719662::1746454848::1746458342::1::::<><><>0<>0<>9d2e1b7ea880653149b6d7fb889f945a<>res://.godot/imported/Reggie-Sprite.png-284cb5995eafb8958b6fd31398378cbb.ctex::
-::res://Scenes/::1746458595
-Enemies.tscn::PackedScene::5897338774296477570::1746458595::0::1::::<><><>0<>0<><>::uid://b7keq5y4f5rh6::::res://Scenes/Enemies/placeholder.tscn
-enemy_spawner.tscn::PackedScene::5662498477873887291::1746458595::0::1::::<><><>0<>0<><>::uid://dav5sliy2663h::::res://Scripts/enemy_spawner.gd
+reggie lofi.wav::AudioStreamWAV/AudioStreamWAV::8199274820099030510::1746886315::1746886350::1::::<><><>0<>0<>873f49d5ed30e71ba8dd7c109854981e<>res://.godot/imported/reggie lofi.wav-68893ed194e101ed9fd4e56bf01cd410.sample::
+reggie title theme WIP #1.wav::AudioStreamWAV/AudioStreamWAV::3297321567997911250::1746879697::1746879813::1::::<><><>0<>0<>69a32032df2d552b6235763f7de3a0c0<>res://.godot/imported/reggie title theme WIP #1.wav-8f5b5bd93503a5b8d9ba24ae47250edf.sample::
+sword-sound-2-36274.mp3::AudioStreamMP3/AudioStreamMP3::1283614467536386932::1746870080::1746870080::1::::<><><>0<>0<>301438f68e5d75c1b6c6a90a8aa8952e<>res://.godot/imported/sword-sound-2-36274.mp3-de04514df4faaf92c02a5094f8724887.mp3str::
+::res://Assets/Sprites/::1746817763
+bad enemy sprite.png::CompressedTexture2D/CompressedTexture2D::9141174938365194489::1746817761::1746817763::0::::<><><>0<>0<>133ff057af9a7d7225d204475343e834<>::
+PlaceholderEnemy.png::CompressedTexture2D/CompressedTexture2D::6165096580202956484::1746817761::1746817763::1::::<><><>0<>0<>8b91c35414e55211636fc5b796b6518c<>res://.godot/imported/PlaceholderEnemy.png-0e2338e0d1d117df6c54732407bfc514.ctex::
+Reggie-Sprite.png::CompressedTexture2D/CompressedTexture2D::7002241727909719662::1746454848::1746817761::1::::<><><>0<>0<>9d2e1b7ea880653149b6d7fb889f945a<>res://.godot/imported/Reggie-Sprite.png-284cb5995eafb8958b6fd31398378cbb.ctex::
+::res://Scenes/::1746903764
+DeathMenuGUI.tscn::PackedScene/PackedScene::68766611697937347::1746891369::0::1::::<><><>0<>0<><>::uid://bw74ye6fak8yw::::res://Scripts/death_menu_gui.gd<>uid://c5p87whj7gjov::::res://Shaders/menu.tres<>uid://bm8in0txqdb2a::::res://Assets/Sounds/reggie title theme WIP #1.wav
+Enemies.tscn::PackedScene::5897338774296477570::1746903764::0::1::::<><><>0<>0<><>::uid://b7keq5y4f5rh6::::res://Scenes/Enemies/placeholder.tscn
+enemy_spawner.tscn::PackedScene/PackedScene::5662498477873887291::1746861246::0::1::::<><><>0<>0<><>::uid://dav5sliy2663h::::res://Scripts/enemy_spawner.gd
+fireball.tscn::PackedScene::1222277937015540296::1746903764::0::1::::<><><>0<>0<><>::uid://cbr6rlagp5lu4::::res://Scripts/Enemies/fireball.gd
 followplayer.tscn::PackedScene/PackedScene::3205223962826843958::1746437747::0::1::::<><><>0<>0<><>::uid://dphp88myvgwef::::res://Scripts/followplayer.gd
 InGameUI.tscn::PackedScene/PackedScene::5404650143220780405::1746437747::0::1::::<><><>0<>0<><>::
-level.tscn::PackedScene::7800627545516594258::1746458595::0::1::::<><><>0<>0<><>::uid://bwm5efke0fggc::::res://Scenes/reggie.tscn<>uid://by71ck3dkdnhx::::res://Scripts/LevelScripts/PlaceholderLevel.gd<>uid://blwvtnmftajb7::::res://Scenes/followplayer.tscn<>uid://cmw7r1fohmup4::::res://Scenes/enemy_spawner.tscn<>uid://cn6j8iitap4fi::::res://Scenes/LevelGUI.tscn<>uid://b7keq5y4f5rh6::::res://Scenes/Enemies/placeholder.tscn
-LevelGUI.tscn::PackedScene::5749897862599368702::1746458595::0::1::::<><><>0<>0<><>::uid://ct7gysvdekohl::::res://Scripts/playerprogressbar.gd
-projectile.tscn::PackedScene::784516289164583169::1746458595::0::1::::<><><>0<>0<><>::uid://cbxandooqff7h::::res://Scripts/bullets.gd
-reggie.tscn::PackedScene::3957176708017292958::1746458595::0::1::::<><><>0<>0<><>::uid://vgrohoybufsk::::res://Scripts/reggie.gd<>uid://lga4sf7ajmnp::::res://Scenes/projectile.tscn<>uid://c6065sltryxe1::::res://Assets/Sprites/Reggie-Sprite.png<>uid://coniby1ichw5g::::res://Scripts/gun.gd<>uid://gvow5rmbv2cx::::res://Assets/Sounds/Impact Gunshot.wav
-::res://Scenes/Enemies/::1746458626
-placeholder.tscn::PackedScene::4653380512425597617::1746458626::0::1::::<><><>0<>0<><>::uid://bpyfmbwu1rnp6::::res://Scripts/Enemies/Placeholder.gd<>uid://ct3oifm05c7um::::res://Assets/Sprites/PlaceholderEnemy.png
-::res://Scripts/::1746458626
-bullets.gd::GDScript::4890534294543365955::1746454848::0::1::::Projectile<>Area2D<><>0<>0<><>::
+level.tscn::PackedScene::7800627545516594258::1746903764::0::1::::<><><>0<>0<><>::uid://by71ck3dkdnhx::::res://Scripts/LevelScripts/PlaceholderLevel.gd<>uid://bwm5efke0fggc::::res://Scenes/reggie.tscn<>uid://blwvtnmftajb7::::res://Scenes/followplayer.tscn<>uid://8ktt58lgpah::::res://Scenes/DeathMenuGUI.tscn<>uid://cn6j8iitap4fi::::res://Scenes/LevelGUI.tscn<>uid://bxrssew438dtk::::res://Scenes/pause_menu.tscn<>uid://dm8df0dcvngpe::::res://Scenes/Enemies/Wizard.tscn
+LevelGUI.tscn::PackedScene/PackedScene::5749897862599368702::1746860545::0::1::::<><><>0<>0<><>::uid://ct7gysvdekohl::::res://Scripts/playerprogressbar.gd
+pause_menu.tscn::PackedScene/PackedScene::4036983804782390148::1746891301::0::1::::<><><>0<>0<><>::uid://dbbx8x2cmk7l1::::res://Scripts/pause_menu.gd<>uid://c5p87whj7gjov::::res://Shaders/menu.tres<>uid://do214gi5xd7mo::::res://Assets/Sounds/reggie lofi.wav
+projectile.tscn::PackedScene/PackedScene::784516289164583169::1746891301::0::1::::<><><>0<>0<><>::uid://cbxandooqff7h::::res://Scripts/bullets.gd<>uid://22h8m77ek704::::res://Assets/Sounds/Bullet Hit.mp3
+reggie.tscn::PackedScene::3957176708017292958::1746903764::0::1::::<><><>0<>0<><>::uid://vgrohoybufsk::::res://Scripts/reggie.gd<>uid://lga4sf7ajmnp::::res://Scenes/projectile.tscn<>uid://c6065sltryxe1::::res://Assets/Sprites/Reggie-Sprite.png<>uid://b2hmrmvjwi6ar::::res://Scripts/Damage.gdshader<>uid://coniby1ichw5g::::res://Scripts/gun.gd<>uid://dbd37wl3cabt5::::res://Assets/Sounds/decentlylongshot.MP3
+::res://Scenes/Enemies/::1746903764
+placeholder.tscn::PackedScene::4653380512425597617::1746903764::0::1::::<><><>0<>0<><>::uid://bpyfmbwu1rnp6::::res://Scripts/Enemies/Placeholder.gd<>uid://ct3oifm05c7um::::res://Assets/Sprites/PlaceholderEnemy.png<>uid://sj17b2r7d0eq::::res://Assets/Sounds/sword-sound-2-36274.mp3
+Wizard.tscn::PackedScene::8069845038405107410::1746903764::0::1::::<><><>0<>0<><>::uid://dpy4nnwi18ei6::::res://Scripts/Enemies/wizard.gd<>uid://biekks5qkie1d::::res://Assets/Sounds/fireball-whoosh-1-179125.mp3<>uid://roc0elpinnlw::::res://Scenes/fireball.tscn
+::res://Scripts/::1746903816
+bullets.gd::GDScript/GDScript::4890534294543365955::1746893562::0::1::::Projectile<>Area2D<><>0<>0<><>::
 camera.gd::GDScript/GDScript::5014559010664664354::1746437747::0::1::::<>Camera2D<><>0<>0<><>::
-enemy_spawner.gd::GDScript::7204468229230913891::1746454848::0::1::::enemy_spawner<>Node2D<><>0<>0<><>::
-followplayer.gd::GDScript::8227516788945548261::1746454848::0::1::::<>Node2D<><>0<>0<><>::
-gun.gd::GDScript::5782810911949245106::1746458626::0::1::::<>Node2D<><>0<>0<><>::
-playerprogressbar.gd::GDScript::6172897623652302945::1746454848::0::1::::<>ProgressBar<><>0<>0<><>::
-reggie.gd::GDScript::1487409563298028978::1746458353::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
-::res://Scripts/Enemies/::1746454848
-Enemy.gd::GDScript::2106111597405023111::1746454848::0::1::::Base_Enemy<>Node2D<><>0<>0<><>::
-Placeholder.gd::GDScript::3489123506304896761::1746454848::0::1::::<>StaticBody2D<><>0<>0<><>::
-::res://Scripts/LevelScripts/::1746454848
-PlaceholderLevel.gd::GDScript::4138595801173356881::1746454848::0::1::::<>Node<><>0<>0<><>::
+Damage.gdshader::Shader::4296729731767737613::1746903816::0::1::::<><><>0<>0<><>::
+death_menu_gui.gd::GDScript/GDScript::3998439241913617914::1746891296::0::1::::<>Control<><>0<>0<><>::
+enemy_spawner.gd::GDScript/GDScript::7204468229230913891::1746821959::0::1::::enemy_spawner<>Node2D<><>0<>0<><>::
+followplayer.gd::GDScript/GDScript::8227516788945548261::1746454848::0::1::::<>Node2D<><>0<>0<><>::
+gun.gd::GDScript::5782810911949245106::1746903763::0::1::::<>Node2D<><>0<>0<><>::
+Pausemenu.gdshader::Shader::6493261287524563801::1746903816::0::1::::<><><>0<>0<><>::
+pause_menu.gd::GDScript/GDScript::7232971944357995424::1746886385::0::1::::<>Control<><>0<>0<><>::
+playerprogressbar.gd::GDScript/GDScript::6172897623652302945::1746454848::0::1::::<>ProgressBar<><>0<>0<><>::
+reggie.gd::GDScript::1487409563298028978::1746903763::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+::res://Scripts/Enemies/::1746903763
+Enemy.gd::GDScript/GDScript::2106111597405023111::1746872951::0::1::::Base_Enemy<>Node2D<><>0<>0<><>::
+fireball.gd::GDScript/GDScript::4880037796166096017::1746903251::0::1::::Fireball<>Area2D<><>0<>0<><>::
+Placeholder.gd::GDScript::3489123506304896761::1746903763::0::1::::<>StaticBody2D<><>0<>0<><>::
+wizard.gd::GDScript::8263424497046993767::1746903763::0::1::::<>StaticBody2D<><>0<>0<><>::
+::res://Scripts/LevelScripts/::1746901353
+PlaceholderLevel.gd::GDScript/GDScript::4138595801173356881::1746901353::0::1::::<>Node<><>0<>0<><>::
+::res://Shaders/::1746903764
+menu.tres::ShaderMaterial::6911534315783582629::1746903764::0::1::::<><><>0<>0<><>::uid://cyrncg3cuotev::::res://Scripts/Pausemenu.gdshader

@@ -9,17 +9,28 @@ class_name Player
 @export var gun: Node2D
 @export var Maxhealth: float = 100
 @export var Health: float = 100
+@export var DeathMenu: Node
 
 func _ready():
 	add_to_group("Player")
+	$Sprite2D/AnimationPlayer.play("RESET")
+	Health = 100
 	
 func has_variable(node: Object, var_name: String) -> bool:
 	return var_name in node.get_property_list().map(func(p): return p.name)
 
 
+	
+func wait(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
+
 func _physics_process(_delta) -> void:
 	move()
-
+	if Health <= 0: die()
+	
+func  die() -> void:
+	if $Sprite2D/AnimationPlayer.is_playing() == false:
+		DeathMenu.pause()
 
 func move() -> void:
 	#get input direction
@@ -28,14 +39,40 @@ func move() -> void:
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
 
-	if input_direction.x != 0 and input_direction.y != 0:
-		input_direction *= 1 / sqrt(2)
+	input_direction = input_direction.normalized() # makes it so diagonal dirs aren't faster
 	
 	#calculate velocity
-	if !velocity.length() > move_speed: 
+	if !velocity.length() > move_speed: # speed cap
 		velocity += input_direction * move_speed * acceleration
+		
 	velocity *= drag
-	
 	
 	#Move reggie on screen
 	move_and_slide()
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void: # checks if something interacts with hitbox
+	if !area.is_in_group("Hurtbox"): return
+	var Animp = $Sprite2D/AnimationPlayer
+	Animp.play("flash")
+	var enemy = area.owner
+	print("Area entered: ", area.name)
+	
+	if enemy != null:
+		if enemy.is_in_group("Enemytypes"):
+			print("It's an enemy")
+			if enemy.is_in_group("Placeholder"):
+				print("Enemy detected: Placholder")
+				if enemy.base.timer > enemy.base.attackcooldown: # If ccooldown has passed
+					enemy.base.dealdamage(0, self) #deals damage type 0 to yourself 
+					enemy.base.timer = 0
+	else: # projectile scripts in future
+		print("It's a projectile")
+		enemy = area.spawner
+		print("Sender: ", enemy)
+		if enemy.is_in_group("Wizard"):
+			print("Enemy detected: Wizard")
+			enemy.base.dealdamage(0, self)
+			area.queue_free()
+		
+		

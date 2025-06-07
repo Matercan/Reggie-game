@@ -4,8 +4,7 @@ class_name enemy_spawner
 
 
 func load_scene(scene_name: String) -> Node:
-	var path = "res://Scenes/Enemies/%s.tscn" % scene_name 
-	path = "res://Scenes/Enemies/placeholder.tscn"
+	var path = "res://Scenes/Enemies/%s.tscn" % scene_name
 	var scene_res = load(path)
 	
 	if scene_res is PackedScene:
@@ -22,11 +21,12 @@ func calculateposition(midpoint: Vector2, spawnradius: float, mindistance: float
 	
 func SpawnEnemies(Type: String, Position: Vector2):
 	var enemy = load_scene(Type)
+	enemy.get_node("Sprite2D").material = enemy.get_node("Sprite2D").material.duplicate()
 	print("Enemy!: ", enemy)
 	add_child(enemy)
 	enemy.transform = transform
 	enemy.global_position = Position
-	
+		
 	print("Enemy position: ", enemy.position)
 	print("Enemy name: ", enemy.name)
 	
