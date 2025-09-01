@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dm8df0dcvngpe"]
+[gd_scene load_steps=11 format=3 uid="uid://dpkb5iag0yx7k"]
 
-[ext_resource type="Script" uid="uid://dpy4nnwi18ei6" path="res://Scripts/Enemies/wizard.gd" id="1_rw7e4"]
+[ext_resource type="Script" uid="uid://dpy4nnwi18ei6" path="res://Scripts/Enemies/wizard.gd" id="1_0nlqu"]
+[ext_resource type="PackedScene" uid="uid://roc0elpinnlw" path="res://Scenes/Enemies/fireball.tscn" id="2_8iby1"]
 [ext_resource type="AudioStream" uid="uid://biekks5qkie1d" path="res://Assets/Sounds/fireball-whoosh-1-179125.mp3" id="2_rw7e4"]
-[ext_resource type="PackedScene" uid="uid://roc0elpinnlw" path="res://Scenes/Enemies/fireball.tscn" id="2_yh2ys"]
 [ext_resource type="Texture2D" uid="uid://wkqqm37pd2wh" path="res://Assets/Sprites/Wizard.png" id="3_8iby1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b2tc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5y6v1"]
 size = Vector2(7.25, 20)
 
 [sub_resource type="Shader" id="Shader_ct1a1"]
@@ -20,7 +20,7 @@ void fragment() {
 	COLOR.a = texture_color.a;
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7c4ku"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wwpqg"]
 shader = SubResource("Shader_ct1a1")
 shader_parameter/flash_Color = Color(1, 1, 1, 1)
 shader_parameter/flash_value = 0.0
@@ -62,22 +62,22 @@ _data = {
 &"flash": SubResource("Animation_7c4ku")
 }
 
-[node name="Wizard" type="StaticBody2D" groups=["Enemytypes"]]
-script = ExtResource("1_rw7e4")
-Projectile = ExtResource("2_yh2ys")
+[node name="Wizard2" type="CharacterBody2D"]
+script = ExtResource("1_0nlqu")
+Projectile = ExtResource("2_8iby1")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0.375, -6.77626e-21)
-shape = SubResource("RectangleShape2D_7b2tc")
+shape = SubResource("RectangleShape2D_5y6v1")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("RectangleShape2D_7b2tc")
+shape = SubResource("RectangleShape2D_5y6v1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 1, 1)
-material = SubResource("ShaderMaterial_7c4ku")
+material = SubResource("ShaderMaterial_wwpqg")
 texture = ExtResource("3_8iby1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://djexgwte1f3cw"]
+
+[ext_resource type="Script" uid="uid://by71ck3dkdnhx" path="res://Scripts/LevelScripts/PlaceholderLevel.gd" id="1_fkpjr"]
+[ext_resource type="PackedScene" uid="uid://cn6j8iitap4fi" path="res://Scenes/Menus/LevelGUI.tscn" id="2_041qh"]
+[ext_resource type="PackedScene" uid="uid://blwvtnmftajb7" path="res://Scenes/Reggie/followplayer.tscn" id="3_8o04s"]
+[ext_resource type="PackedScene" uid="uid://bwm5efke0fggc" path="res://Scenes/Reggie/reggie.tscn" id="4_m48eq"]
+[ext_resource type="PackedScene" uid="uid://8ktt58lgpah" path="res://Scenes/Menus/DeathMenuGUI.tscn" id="5_jenkm"]
+[ext_resource type="PackedScene" uid="uid://bxrssew438dtk" path="res://Scenes/Menus/pause_menu.tscn" id="6_wnx0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkpjr"]
+size = Vector2(62, 11)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_041qh"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_fkpjr")
+
+[node name="GUI" parent="." instance=ExtResource("2_041qh")]
+
+[node name="Followplayer" parent="." node_paths=PackedStringArray("reggie") instance=ExtResource("3_8o04s")]
+reggie = NodePath("../Reggie")
+
+[node name="Reggie" parent="." node_paths=PackedStringArray("DeathMenu") groups=["player"] instance=ExtResource("4_m48eq")]
+position = Vector2(19, 31)
+DeathMenu = NodePath("../CanvasLayer/death_menu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="death_menu" parent="CanvasLayer" instance=ExtResource("5_jenkm")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("6_wnx0m")]
+
+[node name="environment" type="Node2D" parent="."]
+
+[node name="Wall" type="StaticBody2D" parent="environment"]
+position = Vector2(83, 51)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="environment/Wall"]
+position = Vector2(21, 5.5)
+shape = SubResource("RectangleShape2D_fkpjr")
+
+[node name="Sprite2D" type="Sprite2D" parent="environment/Wall"]
+position = Vector2(21.25, 5.125)
+scale = Vector2(61.5, 11.75)
+texture = SubResource("PlaceholderTexture2D_041qh")

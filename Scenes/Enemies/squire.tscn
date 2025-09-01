@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbfsjroxjfvfy"]
+
+[ext_resource type="AudioStream" uid="uid://sj17b2r7d0eq" path="res://Assets/Sounds/sword-sound-2-36274.mp3" id="1_60clh"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_60clh")

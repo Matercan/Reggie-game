@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends CharacterBody2D
 
 var base = Base_Enemy.new()
 
@@ -61,4 +61,3 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		get_node("Sprite2D/AnimationPlayer").play("flash") # plays the animation
 		Velocity += (global_position - reggie.global_position).normalized() * area.knockback #knockback
 		area.get_node("Sprite2D").visible = false #
-	

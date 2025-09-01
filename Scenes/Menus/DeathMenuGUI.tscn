@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://8ktt58lgpah"]
 
-[ext_resource type="Script" uid="uid://bw74ye6fak8yw" path="res://Scripts/death_menu_gui.gd" id="1_ph7ws"]
+[ext_resource type="Script" uid="uid://bw74ye6fak8yw" path="res://Scripts/menus/death_menu_gui.gd" id="1_ph7ws"]
 [ext_resource type="Material" uid="uid://c5p87whj7gjov" path="res://Shaders/menu.tres" id="1_uy6m1"]
 [ext_resource type="AudioStream" uid="uid://bm8in0txqdb2a" path="res://Assets/Sounds/reggie title theme WIP #1.wav" id="3_gts50"]
 

@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends CharacterBody2D
 
 @onready var reggie: CharacterBody2D = get_tree().get_nodes_in_group("player")[0]
 @export var Health: float

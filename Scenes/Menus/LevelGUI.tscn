@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cn6j8iitap4fi"]
 
-[ext_resource type="Script" uid="uid://ct7gysvdekohl" path="res://Scripts/playerprogressbar.gd" id="1_yhu6x"]
+[ext_resource type="Script" uid="uid://ct7gysvdekohl" path="res://Scripts/reggie/playerprogressbar.gd" id="1_yhu6x"]
 
 [node name="GUI" type="CanvasLayer"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bxrssew438dtk"]
 
-[ext_resource type="Script" uid="uid://dbbx8x2cmk7l1" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
+[ext_resource type="Script" uid="uid://dbbx8x2cmk7l1" path="res://Scripts/menus/pause_menu.gd" id="1_k0w1u"]
 [ext_resource type="Material" uid="uid://c5p87whj7gjov" path="res://Shaders/menu.tres" id="2_k0w1u"]
 [ext_resource type="AudioStream" uid="uid://do214gi5xd7mo" path="res://Assets/Sounds/reggie lofi.wav" id="3_1och7"]
 

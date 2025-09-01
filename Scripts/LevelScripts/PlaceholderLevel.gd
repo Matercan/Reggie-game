@@ -24,7 +24,6 @@ func _process(delta: float) -> void:
 		timer += delta
 		if timer >= 3:
 			is_wating = false
-			print("Waited")
 			timer = 0
 	else:
 		if randi_range(1, 4) > 1:

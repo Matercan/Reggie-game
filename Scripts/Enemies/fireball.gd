@@ -2,7 +2,7 @@ extends Area2D
 
 class_name Fireball
 
-@onready var spawner: StaticBody2D
+@onready var spawner: CharacterBody2D
 @onready var reggie: CharacterBody2D = get_tree().get_nodes_in_group("player")[0]
 @onready var dir: Vector2 = get_direction()
 @onready var speed: float = 100

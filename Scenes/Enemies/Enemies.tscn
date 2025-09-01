@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqaykqbwnyj7o"]
 
-[ext_resource type="PackedScene" uid="uid://b7keq5y4f5rh6" path="res://Scenes/Enemies/placeholder.tscn" id="1_77025"]
+[ext_resource type="PackedScene" uid="uid://88cxa6bv7r22" path="res://Scenes/Enemies/placeholder.tscn" id="1_77025"]
 
 [node name="Hivemind" type="Node2D"]
 

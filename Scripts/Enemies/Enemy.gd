@@ -31,14 +31,11 @@ func movetotarget(current_speed: Vector2, max_speed: float, acceleration: float,
 	if dir.x != 0:
 		sprite.scale.x = sign(dir.x) * abs(sprite.scale.x)
 	#print("Enemy Direction: ", dir)
-	print(current_speed)
 	print(acceleration)
 	if current_speed.length() <= max_speed * delta:
-		print("It's working boss")
 		current_speed += dir * delta * acceleration
 		
 	current_speed *= 0.95
-	print(current_speed)
 	return current_speed
 	
 func dealdamage(method: int, to: Node):

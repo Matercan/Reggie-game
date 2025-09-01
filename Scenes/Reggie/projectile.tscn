@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://lga4sf7ajmnp"]
 
-[ext_resource type="Script" uid="uid://cbxandooqff7h" path="res://Scripts/bullets.gd" id="1_f8cdk"]
+[ext_resource type="Script" uid="uid://cbxandooqff7h" path="res://Scripts/reggie/bullets.gd" id="1_f8cdk"]
 [ext_resource type="AudioStream" uid="uid://22h8m77ek704" path="res://Assets/Sounds/Bullet Hit.mp3" id="2_yr2qt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nsakb"]

@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7keq5y4f5rh6"]
+[gd_scene load_steps=10 format=3 uid="uid://88cxa6bv7r22"]
 
-[ext_resource type="Script" uid="uid://bpyfmbwu1rnp6" path="res://Scripts/Enemies/Placeholder.gd" id="1_8y5bj"]
-[ext_resource type="Texture2D" uid="uid://ct3oifm05c7um" path="res://Assets/Sprites/PlaceholderEnemy.png" id="2_ct1a1"]
-[ext_resource type="AudioStream" uid="uid://sj17b2r7d0eq" path="res://Assets/Sounds/sword-sound-2-36274.mp3" id="3_7c4ku"]
+[ext_resource type="Texture2D" uid="uid://ct3oifm05c7um" path="res://Assets/Sprites/PlaceholderEnemy.png" id="1_2cqq5"]
+[ext_resource type="Script" uid="uid://bpyfmbwu1rnp6" path="res://Scripts/Enemies/Placeholder.gd" id="1_7c4ku"]
+[ext_resource type="AudioStream" uid="uid://sj17b2r7d0eq" path="res://Assets/Sounds/sword-sound-2-36274.mp3" id="2_74ot8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b2tc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyp3j"]
 size = Vector2(7.25, 20)
 
 [sub_resource type="Shader" id="Shader_ct1a1"]
@@ -19,7 +19,7 @@ void fragment() {
 	COLOR.a = texture_color.a;
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7c4ku"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b6vpo"]
 shader = SubResource("Shader_ct1a1")
 shader_parameter/flash_Color = Color(1, 1, 1, 1)
 shader_parameter/flash_value = 0.0
@@ -61,28 +61,28 @@ _data = {
 &"flash": SubResource("Animation_7c4ku")
 }
 
-[node name="Placeholder" type="StaticBody2D" groups=["Enemytypes"]]
-script = ExtResource("1_8y5bj")
+[node name="Placeholder2" type="CharacterBody2D"]
+script = ExtResource("1_7c4ku")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0.375, -6.77626e-21)
-shape = SubResource("RectangleShape2D_7b2tc")
+shape = SubResource("RectangleShape2D_kyp3j")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("RectangleShape2D_7b2tc")
+shape = SubResource("RectangleShape2D_kyp3j")
 
 [node name="Hurtbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-shape = SubResource("RectangleShape2D_7b2tc")
+shape = SubResource("RectangleShape2D_kyp3j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_7c4ku")
+material = SubResource("ShaderMaterial_b6vpo")
 position = Vector2(0.5, 5.68434e-14)
 scale = Vector2(0.00451807, 0.00669344)
-texture = ExtResource("2_ct1a1")
+texture = ExtResource("1_2cqq5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
@@ -90,7 +90,7 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_7c4ku")
+stream = ExtResource("2_74ot8")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
