@@ -1,0 +1,102 @@
+[gd_scene load_steps=14 format=3 uid="uid://bwm5efke0fggc"]
+
+[ext_resource type="Script" uid="uid://vgrohoybufsk" path="res://Scripts/reggie.gd" id="1_0pfdb"]
+[ext_resource type="PackedScene" uid="uid://lga4sf7ajmnp" path="res://Scenes/Reggie/projectile.tscn" id="2_s4wch"]
+[ext_resource type="Texture2D" uid="uid://cbgpcthuyg058" path="res://Assets/Sprites/Reggie-Sprite.png" id="3_pwnlj"]
+[ext_resource type="Shader" uid="uid://b2hmrmvjwi6ar" path="res://Scripts/Damage.gdshader" id="3_rj8jq"]
+[ext_resource type="Script" uid="uid://coniby1ichw5g" path="res://Scripts/gun.gd" id="4_s4wch"]
+[ext_resource type="AudioStream" uid="uid://dbd37wl3cabt5" path="res://Assets/Sounds/decentlylongshot.MP3" id="6_rj8jq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvbul"]
+size = Vector2(4, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cgtbn"]
+shader = ExtResource("3_rj8jq")
+shader_parameter/flash_Color = Color(1, 0, 0, 1)
+shader_parameter/flash_value = 0.0
+
+[sub_resource type="Animation" id="Animation_cgtbn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flash_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rj8jq"]
+resource_name = "flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flash_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cnaa4"]
+_data = {
+&"RESET": SubResource("Animation_cgtbn"),
+&"flash": SubResource("Animation_rj8jq")
+}
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s4wch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj8jq"]
+size = Vector2(4, 15)
+
+[node name="Reggie" type="CharacterBody2D" node_paths=PackedStringArray("gun")]
+scale = Vector2(1, 0.958218)
+script = ExtResource("1_0pfdb")
+projectile = ExtResource("2_s4wch")
+gun = NodePath("gun")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_vvbul")
+debug_color = Color(0.585556, 0.402011, 0.951701, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cgtbn")
+texture = ExtResource("3_pwnlj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_cnaa4")
+}
+
+[node name="gun" type="Node2D" parent="." node_paths=PackedStringArray("guntip")]
+position = Vector2(0, -1)
+script = ExtResource("4_s4wch")
+guntip = NodePath("Sprite2D")
+rotation_speed_deg = 720.0
+reloadtime = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="gun"]
+modulate = Color(0.540347, 0.410247, 0.0186013, 1)
+position = Vector2(4.935, -0.175)
+scale = Vector2(11.5, 1)
+texture = SubResource("PlaceholderTexture2D_s4wch")
+
+[node name="Gunshot" type="AudioStreamPlayer2D" parent="gun"]
+stream = ExtResource("6_rj8jq")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_rj8jq")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

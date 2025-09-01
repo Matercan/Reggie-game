@@ -28,8 +28,5 @@ func _process(delta: float) -> void:
 	timer += delta
 	
 func move(delta: float) -> void:
-	print("Direction of Fireball: ", dir)
-	print("Fireball target direction: ", reggie.global_position)
-	print("Fireball position: ", global_position)
 	position += dir * speed * delta
 	

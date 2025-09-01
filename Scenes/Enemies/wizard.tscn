@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://dm8df0dcvngpe"]
+
+[ext_resource type="Script" uid="uid://dpy4nnwi18ei6" path="res://Scripts/Enemies/wizard.gd" id="1_rw7e4"]
+[ext_resource type="AudioStream" uid="uid://biekks5qkie1d" path="res://Assets/Sounds/fireball-whoosh-1-179125.mp3" id="2_rw7e4"]
+[ext_resource type="PackedScene" uid="uid://roc0elpinnlw" path="res://Scenes/Enemies/fireball.tscn" id="2_yh2ys"]
+[ext_resource type="Texture2D" uid="uid://wkqqm37pd2wh" path="res://Assets/Sprites/Wizard.png" id="3_8iby1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b2tc"]
+size = Vector2(7.25, 20)
+
+[sub_resource type="Shader" id="Shader_ct1a1"]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_Color: source_color;
+uniform float flash_value: hint_range(0.0, 1.0, 0.1);
+
+void fragment() {
+	vec4 texture_color = texture(TEXTURE, UV);
+	COLOR = mix(texture_color, flash_Color, flash_value);
+	COLOR.a = texture_color.a;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7c4ku"]
+shader = SubResource("Shader_ct1a1")
+shader_parameter/flash_Color = Color(1, 1, 1, 1)
+shader_parameter/flash_value = 0.0
+
+[sub_resource type="Animation" id="Animation_e7mp7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flash_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7c4ku"]
+resource_name = "flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flash_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tvp1b"]
+_data = {
+&"RESET": SubResource("Animation_e7mp7"),
+&"flash": SubResource("Animation_7c4ku")
+}
+
+[node name="Wizard" type="StaticBody2D" groups=["Enemytypes"]]
+script = ExtResource("1_rw7e4")
+Projectile = ExtResource("2_yh2ys")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0.375, -6.77626e-21)
+shape = SubResource("RectangleShape2D_7b2tc")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_7b2tc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+material = SubResource("ShaderMaterial_7c4ku")
+texture = ExtResource("3_8iby1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_tvp1b")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_rw7e4")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
